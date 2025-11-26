@@ -1,0 +1,232 @@
+/* ========================================
+   Language Switcher Styles
+   ======================================== */
+
+/* Language Switcher Container */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+}
+
+/* Language Links */
+.language-switcher a {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Language Link Hover */
+.language-switcher a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active Language */
+.language-switcher a.active {
+    color: #ffffff;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Separator */
+.language-switcher span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    user-select: none;
+}
+
+/* ========================================
+   Responsive Styles
+   ======================================== */
+
+/* Tablet and below */
+@media (max-width: 991px) {
+    .language-switcher {
+        margin-top: 10px;
+        justify-content: center;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .language-switcher a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .language-switcher span {
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   Alternative Styles (Optional)
+   ======================================== */
+
+/* Flag Icons Style (if you add flags) */
+.language-switcher.with-flags a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.language-switcher.with-flags a img {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+/* Dropdown Style (Alternative) */
+.language-switcher.dropdown {
+    position: relative;
+}
+
+.language-switcher.dropdown select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-switcher.dropdown select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.language-switcher.dropdown select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Dark Background Alternative */
+.topbar.dark .language-switcher a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.topbar.dark .language-switcher a:hover {
+    color: #000000;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.topbar.dark .language-switcher a.active {
+    color: #000000;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.topbar.dark .language-switcher span {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Animation (Optional)
+   ======================================== */
+
+.language-switcher a {
+    position: relative;
+    overflow: hidden;
+}
+
+.language-switcher a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.language-switcher a:hover::before,
+.language-switcher a.active::before {
+    width: 80%;
+}
+
+/* Smooth Transition on Language Change */
+body {
+    transition: opacity 0.3s ease;
+}
+
+body.locale-changing {
+    opacity: 0.7;
+}
+
+/* ========================================
+   Usage Instructions
+   ======================================== */
+
+/*
+1. Basic Usage:
+   Add this CSS to your public/css/custom.css file
+
+2. Enable Animations:
+   Keep the animation styles for smooth transitions
+
+3. Dark Background:
+   Add class "dark" to your topbar if needed:
+   <div class="topbar dark">
+
+4. With Flags:
+   Add class "with-flags" and include flag images:
+   <li class="language-switcher with-flags">
+       <a href="#"><img src="flag-en.svg" alt="EN"> EN</a>
+   </li>
+
+5. Dropdown Version:
+   Replace the links with a select:
+   <li class="language-switcher dropdown">
+       <select onchange="window.location.href=this.value">
+           <option value="{{ route('locale.switch', 'en') }}">EN</option>
+           <option value="{{ route('locale.switch', 'uk') }}">UA</option>
+       </select>
+   </li>
+*/
+
+/* ========================================
+   Customization Variables
+   ======================================== */
+
+:root {
+    /* Customize these variables to match your theme */
+    --lang-switcher-color: rgba(255, 255, 255, 0.7);
+    --lang-switcher-hover-color: #ffffff;
+    --lang-switcher-active-color: #ffffff;
+    --lang-switcher-bg-hover: rgba(255, 255, 255, 0.1);
+    --lang-switcher-bg-active: rgba(255, 255, 255, 0.15);
+    --lang-switcher-separator: rgba(255, 255, 255, 0.3);
+}
+
+/* Using CSS Variables (Advanced) */
+.language-switcher.custom a {
+    color: var(--lang-switcher-color);
+}
+
+.language-switcher.custom a:hover {
+    color: var(--lang-switcher-hover-color);
+    background-color: var(--lang-switcher-bg-hover);
+}
+
+.language-switcher.custom a.active {
+    color: var(--lang-switcher-active-color);
+    background-color: var(--lang-switcher-bg-active);
+}
+
+.language-switcher.custom span {
+    color: var(--lang-switcher-separator);
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -19,7 +20,9 @@
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
@@ -38,8 +41,11 @@
     <!-- Main Custom Css -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" media="screen">
 
+    <link href="{{ asset('css/language_switch.css') }}" rel="stylesheet" media="screen">
+
     @stack('styles')
 </head>
+
 <body>
 
     <!-- Preloader Start -->
@@ -91,4 +97,5 @@
 
     @stack('scripts')
 </body>
+
 </html>

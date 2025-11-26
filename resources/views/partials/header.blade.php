@@ -28,10 +28,10 @@
                 <div class="col-md-3">
                     <!-- Topbar Social Links & Language Switcher Start -->
                     <div class="topbar-social-links">
-                        <ul>
+                        {{-- <ul>
                             <li><a href="{{ config('restaurant.social.instagram', '#') }}"><i class="fa-brands fa-instagram"></i></a></li>
                             <li><a href="{{ config('restaurant.social.facebook', '#') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="{{ config('restaurant.social.dribbble', '#') }}"><i class="fa-brands fa-dribbble"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.dribbble', '#') }}"><i class="fa-brands fa-dribbble"></i></a></li> --}}
                             <li class="language-switcher">
                                 <a href="{{ route('locale.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">EN</a>
                                 <span>|</span>
@@ -71,11 +71,11 @@
                                 <a class="nav-link" href="{{ route('menu') }}">{{ __('common.menu') }}</a>
                             </li>
 
-                            <li class="nav-item {{ request()->routeIs('blog.*') ? 'active' : '' }}">
+                            {{-- <li class="nav-item {{ request()->routeIs('blog.*') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('blog.index') }}">{{ __('common.blog') }}</a>
-                            </li>
+                            </li> --}}
 
-                            <li class="nav-item submenu">
+                            {{-- <li class="nav-item submenu">
                                 <a class="nav-link" href="#">{{ __('common.pages') }}</a>
                                 <ul>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('team') }}">{{ __('common.our_team') }}</a></li>
@@ -84,15 +84,15 @@
                                     <li class="nav-item"><a class="nav-link" href="{{ route('gallery.videos') }}">{{ __('common.video_gallery') }}</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('faqs') }}">{{ __('common.faqs') }}</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
 
                             <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('contact') }}">{{ __('common.contact') }}</a>
                             </li>
 
-                            <li class="nav-item highlighted-menu">
+                            {{-- <li class="nav-item highlighted-menu">
                                 <a class="nav-link" href="{{ route('reserve') }}">{{ __('common.reserve_table') }}</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
 
