@@ -28,24 +28,24 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h4>{{ config('app.name', 'რესტორანი') }}</h4>
-            <small>ადმინ პანელი</small>
+            <h4>{{ config('app.name', 'Restaurant') }}</h4>
+            <small>Admin Panel</small>
         </div>
 
         <nav class="nav flex-column">
             <a class="nav-link {{ request()->routeIs('home') || request()->routeIs('dashboard') ? 'active' : '' }}"
                 href="{{ route('home') }}">
                 <i class="bi bi-house-door"></i>
-                <span>მთავარი</span>
+                <span>Home</span>
             </a>
             <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
                 href="{{ route('categories.index') }}">
                 <i class="bi bi-tag"></i>
-                <span>კატეგორიები</span>
+                <span>Categories</span>
             </a>
             <a class="nav-link {{ request()->routeIs('menu.*') ? 'active' : '' }}" href="{{ route('menu.index') }}">
                 <i class="bi bi-journal-text"></i>
-                <span>მენიუ</span>
+                <span>Menu</span>
             </a>
         </nav>
 
@@ -54,7 +54,7 @@
                 @csrf
                 <button type="submit" class="logout-btn w-100 border-0 bg-transparent">
                     <i class="bi bi-box-arrow-right"></i>
-                    <span>გასვლა</span>
+                    <span>Logout</span>
                 </button>
             </form>
         </div>
@@ -74,7 +74,7 @@
                         {{ Auth::user()->name ?? 'Admin' }}
                     </div>
                     <div style="font-size: 12px; color: #718096;">
-                        ადმინისტრატორი
+                        Administrator
                     </div>
                 </div>
             </div>
