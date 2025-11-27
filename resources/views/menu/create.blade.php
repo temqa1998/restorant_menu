@@ -122,14 +122,10 @@
                                         <label for="currency" class="form-label">Currency</label>
                                         <select class="form-select @error('currency') is-invalid @enderror" id="currency"
                                             name="currency">
-                                            <option value="USD" {{ old('currency', 'USD') == 'USD' ? 'selected' : '' }}>
-                                                USD</option>
-                                            <option value="EUR" {{ old('currency') == 'EUR' ? 'selected' : '' }}>EUR
-                                            </option>
-                                            <option value="GBP" {{ old('currency') == 'GBP' ? 'selected' : '' }}>GBP
-                                            </option>
-                                            <option value="UAH" {{ old('currency') == 'UAH' ? 'selected' : '' }}>UAH
-                                            </option>
+                                            <option value="UAH" {{ old('currency', 'UAH') == 'UAH' ? 'selected' : '' }}>UAH</option>
+                                            <option value="USD" {{ old('currency') == 'USD' ? 'selected' : '' }}>USD</option>
+                                            <option value="EUR" {{ old('currency') == 'EUR' ? 'selected' : '' }}>EUR</option>
+                                            <option value="GBP" {{ old('currency') == 'GBP' ? 'selected' : '' }}>GBP</option>
                                         </select>
                                         @error('currency')
                                             <div class="invalid-feedback">{{ $message }}</div>

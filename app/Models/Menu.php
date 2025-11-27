@@ -46,6 +46,15 @@ class Menu extends Model
     ];
 
     /**
+     * The attributes that should have default values.
+     *
+     * @var array<string, mixed>
+     */
+    protected $attributes = [
+        'currency' => 'UAH',
+    ];
+
+    /**
      * Get the category that owns the menu item.
      */
     public function category(): BelongsTo
@@ -64,7 +73,7 @@ class Menu extends Model
     /**
      * Get the localized description based on current locale.
      */
-    public function getLocalizedDescriptionAttribute(): string
+    public function getLocalizedDescriptionAttribute(): ?string
     {
         return app()->getLocale() === 'uk' ? $this->description_uk : $this->description;
     }
@@ -79,7 +88,7 @@ class Menu extends Model
             'EUR' => '€',
             'GBP' => '£',
             'UAH' => '₴',
-            default => '$',
+            default => '₴',
         };
 
         return $symbol . number_format($this->price, 2);

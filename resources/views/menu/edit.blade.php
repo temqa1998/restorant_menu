@@ -123,6 +123,9 @@
                                         <label for="currency" class="form-label">Currency</label>
                                         <select class="form-select @error('currency') is-invalid @enderror" id="currency"
                                             name="currency">
+                                            <option value="UAH"
+                                                {{ old('currency', $menu->currency) == 'UAH' ? 'selected' : '' }}>UAH
+                                            </option>
                                             <option value="USD"
                                                 {{ old('currency', $menu->currency) == 'USD' ? 'selected' : '' }}>USD
                                             </option>
@@ -131,9 +134,6 @@
                                             </option>
                                             <option value="GBP"
                                                 {{ old('currency', $menu->currency) == 'GBP' ? 'selected' : '' }}>GBP
-                                            </option>
-                                            <option value="UAH"
-                                                {{ old('currency', $menu->currency) == 'UAH' ? 'selected' : '' }}>UAH
                                             </option>
                                         </select>
                                         @error('currency')
