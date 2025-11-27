@@ -49,9 +49,9 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="description" class="form-label">Description (English) *</label>
+                                    <label for="description" class="form-label">Description (English)</label>
                                     <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
-                                        rows="4" required>{{ old('description', $menu->description) }}</textarea>
+                                        rows="4">{{ old('description', $menu->description) }}</textarea>
                                     @error('description')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -74,9 +74,9 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="description_uk" class="form-label">Description (Ukrainian) *</label>
+                                    <label for="description_uk" class="form-label">Description (Ukrainian)</label>
                                     <textarea class="form-control @error('description_uk') is-invalid @enderror" id="description_uk" name="description_uk"
-                                        rows="4" required>{{ old('description_uk', $menu->description_uk) }}</textarea>
+                                        rows="4">{{ old('description_uk', $menu->description_uk) }}</textarea>
                                     @error('description_uk')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
