@@ -14,7 +14,7 @@
                         <h1 class="text-anime-style-3" data-cursor="-opaque">{{ __('about.page_title') }}</h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('about.breadcrumb_home') }}</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('welcome') }}">{{ __('about.breadcrumb_home') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('about.breadcrumb_about') }}</li>
                             </ol>
                         </nav>
@@ -424,7 +424,7 @@
                         <!-- Cta Button Start -->
                         <div class="cta-btn wow fadeInUp" data-wow-delay="0.4s">
                             <a href="{{ route('contact') }}" class="btn-default btn-highlighted">{{ __('about.cta.button_contact') }}</a>
-                        
+
                         </div>
                         <!-- Cta Button End -->
                     </div>

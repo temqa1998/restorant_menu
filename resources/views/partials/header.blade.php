@@ -11,13 +11,15 @@
                             <li>
                                 <a href="tel:{{ config('restaurant.phone') }}">
                                     <img src="{{ asset('images/icon-phone-accent.svg') }}" alt="">
-                                    <span>{{ __('common.phone') }}: </span>{{ config('restaurant.phone', '+(123) 465-789') }}
+                                    <span>{{ __('common.phone') }}:
+                                    </span>{{ config('restaurant.phone', '+(123) 465-789') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:{{ config('restaurant.email') }}">
                                     <img src="{{ asset('images/icon-mail-accent.svg') }}" alt="">
-                                    <span>{{ __('common.email') }}: </span>{{ config('restaurant.email', 'info@domainname.com') }}
+                                    <span>{{ __('common.email') }}:
+                                    </span>{{ config('restaurant.email', 'info@domainname.com') }}
                                 </a>
                             </li>
                         </ul>
@@ -29,13 +31,18 @@
                     <!-- Topbar Social Links & Language Switcher Start -->
                     <div class="topbar-social-links">
                         <ul>
-                            <li><a href="{{ config('restaurant.social.instagram', '#') }}"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="{{ config('restaurant.social.facebook', '#') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="{{ config('restaurant.social.dribbble', '#') }}"><i class="fa-brands fa-dribbble"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.instagram', '#') }}"><i
+                                        class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.facebook', '#') }}"><i
+                                        class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.dribbble', '#') }}"><i
+                                        class="fa-brands fa-dribbble"></i></a></li>
                             <li class="language-switcher">
-                                <a href="{{ route('locale.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">EN</a>
+                                <a href="{{ route('locale.switch', 'en') }}"
+                                    class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">EN</a>
                                 <span>|</span>
-                                <a href="{{ route('locale.switch', 'uk') }}" class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}">UA</a>
+                                <a href="{{ route('locale.switch', 'uk') }}"
+                                    class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}">UA</a>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +57,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo Start -->
-                <a class="navbar-brand" href="{{ route('home') }}">
+                <a class="navbar-brand" href="{{ route('welcome') }}">
                     <img src="{{ asset('images/logo.svg') }}" alt="Logo">
                 </a>
                 <!-- Logo End -->
@@ -59,8 +66,8 @@
                 <div class="collapse navbar-collapse main-menu">
                     <div class="nav-menu-wrapper">
                         <ul class="navbar-nav mr-auto" id="menu">
-                            <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('home') }}">{{ __('common.home') }}</a>
+                            <li class="nav-item {{ request()->routeIs('welcome') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('welcome') }}">{{ __('common.home') }}</a>
                             </li>
 
                             <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">

@@ -19,10 +19,12 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-// Menu Page (Public)
+// Menu Page (Public) - ეს უნდა იყოს BEFORE auth routes
 Route::get('/menu', function () {
-    return view('menu');
-})->name('menu.public');
+    $categories = \App\Models\Category::active()->ordered()->with('items')->get();
+    $featuredItems = \App\Models\Menu::active()->featured()->ordered()->limit(6)->get();
+    return view('menu', compact('categories', 'featuredItems'));
+})->name('menu');
 
 // Gallery Routes
 Route::prefix('gallery')->group(function () {
@@ -53,12 +55,12 @@ Route::post('/contact', function () {
 Auth::routes();
 
 // Admin Routes (Protected)
-Route::middleware('auth')->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
     // Category Routes
     Route::resource('categories', CategoryController::class);
 
-    // Menu Routes
+    // Menu Routes (Admin)
     Route::resource('menu', MenuController::class);
 });

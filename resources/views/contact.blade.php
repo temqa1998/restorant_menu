@@ -14,7 +14,7 @@
                         <h1 class="text-anime-style-3" data-cursor="-opaque">{{ __('contact.page_title') }}</h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('contact.breadcrumb_home') }}</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('welcome') }}">{{ __('contact.breadcrumb_home') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('contact.breadcrumb_contact') }}</li>
                             </ol>
                         </nav>

@@ -21,10 +21,14 @@
                     <div class="footer-social-links">
                         <h3>{{ __('common.follow_socials') }}:</h3>
                         <ul>
-                            <li><a href="{{ config('restaurant.social.pinterest', '#') }}"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                            <li><a href="{{ config('restaurant.social.twitter', '#') }}"><i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li><a href="{{ config('restaurant.social.instagram', '#') }}"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="{{ config('restaurant.social.facebook', '#') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.pinterest', '#') }}"><i
+                                        class="fa-brands fa-pinterest-p"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.twitter', '#') }}"><i
+                                        class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.instagram', '#') }}"><i
+                                        class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="{{ config('restaurant.social.facebook', '#') }}"><i
+                                        class="fa-brands fa-facebook-f"></i></a></li>
                         </ul>
                     </div>
                     <!-- Footer Social Link End -->
@@ -62,8 +66,12 @@
                         <!-- Footer Contact Item Start -->
                         <div class="footer-contact-item">
                             <h3>{{ __('common.get_in_touch') }}</h3>
-                            <p><a href="mailto:{{ config('restaurant.email') }}">{{ config('restaurant.email', 'info@domainname.com') }}</a></p>
-                            <p><a href="tel:{{ config('restaurant.phone') }}">{{ config('restaurant.phone', '+(123) 456-7890') }}</a></p>
+                            <p><a
+                                    href="mailto:{{ config('restaurant.email') }}">{{ config('restaurant.email', 'info@domainname.com') }}</a>
+                            </p>
+                            <p><a
+                                    href="tel:{{ config('restaurant.phone') }}">{{ config('restaurant.phone', '+(123) 456-7890') }}</a>
+                            </p>
                         </div>
                         <!-- Footer Contact Item End -->
                     </div>
@@ -114,7 +122,7 @@
                     <!-- Footer Menu Start -->
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="{{ route('home') }}">{{ __('common.home') }}</a></li>
+                            <li><a href="{{ route('welcome') }}">{{ __('common.home') }}</a></li>
                             <li><a href="{{ route('about') }}">{{ __('common.about') }}</a></li>
                             <li><a href="{{ route('menu') }}">{{ __('common.menu') }}</a></li>
                             <li><a href="{{ route('contact') }}">{{ __('common.contact') }}</a></li>

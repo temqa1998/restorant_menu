@@ -33,17 +33,17 @@
         </div>
 
         <nav class="nav flex-column">
-            <a class="nav-link {{ request()->routeIs('home') || request()->routeIs('dashboard') ? 'active' : '' }}"
-                href="{{ route('home') }}">
+            <a class="nav-link {{ request()->routeIs('admin.home') ? 'active' : '' }}" href="{{ route('admin.home') }}">
                 <i class="bi bi-house-door"></i>
                 <span>Home</span>
             </a>
-            <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
-                href="{{ route('categories.index') }}">
+            <a class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}"
+                href="{{ route('admin.categories.index') }}">
                 <i class="bi bi-tag"></i>
                 <span>Categories</span>
             </a>
-            <a class="nav-link {{ request()->routeIs('menu.*') ? 'active' : '' }}" href="{{ route('menu.index') }}">
+            <a class="nav-link {{ request()->routeIs('admin.menu.*') ? 'active' : '' }}"
+                href="{{ route('admin.menu.index') }}">
                 <i class="bi bi-journal-text"></i>
                 <span>Menu</span>
             </a>

@@ -27,7 +27,8 @@
 
                         <!-- Hero Button Start -->
                         <div class="hero-btn wow fadeInUp" data-wow-delay="0.2s">
-                            <a href="{{ route('contact') }}" class="btn-default btn-highlighted">{{ __('common.get_started') }}</a>
+                            <a href="{{ route('contact') }}"
+                                class="btn-default btn-highlighted">{{ __('common.get_started') }}</a>
                             <a href="{{ route('menu') }}" class="btn-default btn-dark">{{ __('common.explore_menu') }}</a>
                         </div>
                         <!-- Hero Button End -->
@@ -48,8 +49,9 @@
                         <!-- Working Hours Body Start -->
                         <div class="working-hours-body">
                             <ul>
-                                @foreach(config('restaurant.working_hours') as $schedule)
-                                    <li>{{ __('common.' . strtolower(str_replace([' ', '-'], '_', $schedule['days'])), ['default' => $schedule['days']]) }} <span>{{ $schedule['hours'] }}</span></li>
+                                @foreach (config('restaurant.working_hours') as $schedule)
+                                    <li>{{ __('common.' . strtolower(str_replace([' ', '-'], '_', $schedule['days'])), ['default' => $schedule['days']]) }}
+                                        <span>{{ $schedule['hours'] }}</span></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -125,7 +127,7 @@
                         <!-- About Body List Start -->
                         <div class="about-body-list wow fadeInUp" data-wow-delay="0.4s">
                             <ul>
-                                @foreach(__('home.about.features') as $feature)
+                                @foreach (__('home.about.features') as $feature)
                                     <li>{{ $feature }}</li>
                                 @endforeach
                             </ul>
@@ -188,7 +190,7 @@
                 <div class="col-lg-12">
                     <!-- Our History Box Start -->
                     <div class="our-history-box">
-                        @foreach(__('home.history.timeline') as $year => $description)
+                        @foreach (__('home.history.timeline') as $year => $description)
                             <!-- History Item Start -->
                             <div class="history-item wow fadeInUp" data-wow-delay="{{ $loop->index * 0.2 }}s">
                                 <div class="history-item-content">
@@ -197,7 +199,8 @@
                                 </div>
                                 <div class="history-item-image">
                                     <figure>
-                                        <img src="{{ asset('images/history-image-' . ($loop->index + 1) . '.jpg') }}" alt="">
+                                        <img src="{{ asset('images/history-image-' . ($loop->index + 1) . '.jpg') }}"
+                                            alt="">
                                     </figure>
                                 </div>
                             </div>
@@ -227,7 +230,8 @@
 
                         <!-- Cta Button Start -->
                         <div class="cta-btn wow fadeInUp" data-wow-delay="0.4s">
-                            <a href="{{ route('contact') }}" class="btn-default btn-highlighted">{{ __('common.contact_now') }}</a>
+                            <a href="{{ route('contact') }}"
+                                class="btn-default btn-highlighted">{{ __('common.contact_now') }}</a>
 
                         </div>
                         <!-- Cta Button End -->
@@ -295,7 +299,7 @@
 @endsection
 
 @push('scripts')
-<script>
-    // Page-specific JavaScript
-</script>
+    <script>
+        // Page-specific JavaScript
+    </script>
 @endpush

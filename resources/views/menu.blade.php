@@ -14,7 +14,8 @@
                         <h1 class="text-anime-style-3" data-cursor="-opaque">{{ __('menu.page_title') }}</h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('menu.breadcrumb_home') }}</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="{{ route('welcome') }}">{{ __('menu.breadcrumb_home') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('menu.breadcrumb_menu') }}</li>
                             </ol>
                         </nav>
@@ -38,25 +39,29 @@
                             <div class="our-menu-tab-nav">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button" role="tab" aria-selected="true">
+                                        <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                                            data-bs-target="#first" type="button" role="tab" aria-selected="true">
                                             <img src="{{ asset('images/icon-menu-tab-primary-1.svg') }}" alt="">
                                             {{ __('menu.categories.starters') }}
                                         </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#second" type="button" role="tab" aria-selected="false">
+                                        <button class="nav-link" id="second-tab" data-bs-toggle="tab"
+                                            data-bs-target="#second" type="button" role="tab" aria-selected="false">
                                             <img src="{{ asset('images/icon-menu-tab-primary-2.svg') }}" alt="">
                                             {{ __('menu.categories.main_courses') }}
                                         </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third" type="button" role="tab" aria-selected="false">
+                                        <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third"
+                                            type="button" role="tab" aria-selected="false">
                                             <img src="{{ asset('images/icon-menu-tab-primary-3.svg') }}" alt="">
                                             {{ __('menu.categories.desserts') }}
                                         </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="fourth-tab" data-bs-toggle="tab" data-bs-target="#fourth" type="button" role="tab" aria-selected="false">
+                                        <button class="nav-link" id="fourth-tab" data-bs-toggle="tab"
+                                            data-bs-target="#fourth" type="button" role="tab" aria-selected="false">
                                             <img src="{{ asset('images/icon-menu-tab-primary-4.svg') }}" alt="">
                                             {{ __('menu.categories.beverages') }}
                                         </button>
@@ -75,16 +80,24 @@
                                             <div class="our-menu-list">
                                                 @php
                                                     $starters = __('menu.starters');
-                                                    $menuImages = ['our-menu-image-1.png', 'our-menu-image-2.png', 'our-menu-image-3.png', 'our-menu-image-4.png', 'our-menu-image-5.png', 'our-menu-image-6.png'];
+                                                    $menuImages = [
+                                                        'our-menu-image-1.png',
+                                                        'our-menu-image-2.png',
+                                                        'our-menu-image-3.png',
+                                                        'our-menu-image-4.png',
+                                                        'our-menu-image-5.png',
+                                                        'our-menu-image-6.png',
+                                                    ];
                                                 @endphp
-                                                @if(is_array($starters))
-                                                    @foreach($starters as $index => $item)
+                                                @if (is_array($starters))
+                                                    @foreach ($starters as $index => $item)
                                                         <!-- Our Menu Item Start -->
                                                         <div class="our-menu-item">
                                                             <!-- Our Menu Image Start -->
                                                             <div class="our-menu-image">
                                                                 <figure>
-                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}" alt="{{ $item['name'] }}">
+                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}"
+                                                                        alt="{{ $item['name'] }}">
                                                                 </figure>
                                                             </div>
                                                             <!-- Our Menu Image End -->
@@ -125,14 +138,15 @@
                                                 @php
                                                     $mainCourses = __('menu.main_courses');
                                                 @endphp
-                                                @if(is_array($mainCourses))
-                                                    @foreach($mainCourses as $index => $item)
+                                                @if (is_array($mainCourses))
+                                                    @foreach ($mainCourses as $index => $item)
                                                         <!-- Our Menu Item Start -->
                                                         <div class="our-menu-item">
                                                             <!-- Our Menu Image Start -->
                                                             <div class="our-menu-image">
                                                                 <figure>
-                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}" alt="{{ $item['name'] }}">
+                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}"
+                                                                        alt="{{ $item['name'] }}">
                                                                 </figure>
                                                             </div>
                                                             <!-- Our Menu Image End -->
@@ -174,14 +188,15 @@
                                                 @php
                                                     $desserts = __('menu.desserts');
                                                 @endphp
-                                                @if(is_array($desserts))
-                                                    @foreach($desserts as $index => $item)
+                                                @if (is_array($desserts))
+                                                    @foreach ($desserts as $index => $item)
                                                         <!-- Our Menu Item Start -->
                                                         <div class="our-menu-item">
                                                             <!-- Our Menu Image Start -->
                                                             <div class="our-menu-image">
                                                                 <figure>
-                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}" alt="{{ $item['name'] }}">
+                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}"
+                                                                        alt="{{ $item['name'] }}">
                                                                 </figure>
                                                             </div>
                                                             <!-- Our Menu Image End -->
@@ -223,14 +238,15 @@
                                                 @php
                                                     $beverages = __('menu.beverages');
                                                 @endphp
-                                                @if(is_array($beverages))
-                                                    @foreach($beverages as $index => $item)
+                                                @if (is_array($beverages))
+                                                    @foreach ($beverages as $index => $item)
                                                         <!-- Our Menu Item Start -->
                                                         <div class="our-menu-item">
                                                             <!-- Our Menu Image Start -->
                                                             <div class="our-menu-image">
                                                                 <figure>
-                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}" alt="{{ $item['name'] }}">
+                                                                    <img src="{{ asset('images/' . $menuImages[$loop->index % 6]) }}"
+                                                                        alt="{{ $item['name'] }}">
                                                                 </figure>
                                                             </div>
                                                             <!-- Our Menu Image End -->
@@ -271,7 +287,8 @@
                     <div class="col-lg-12">
                         <!-- Section Footer Text Start -->
                         <div class="section-footer-text wow fadeInUp" data-wow-delay="0.4s">
-                            <p><span>Free</span>{{ __('menu.footer_text') }} <a href="{{ route('menu') }}">{{ __('menu.footer_link') }}</a></p>
+                            <p><span>Free</span>{{ __('menu.footer_text') }} <a
+                                    href="{{ route('menu') }}">{{ __('menu.footer_link') }}</a></p>
                         </div>
                         <!-- Section Footer Text End -->
                     </div>
@@ -309,12 +326,13 @@
                         <div class="testimonial-slider">
                             <div class="swiper">
                                 <div class="swiper-wrapper" data-cursor-text="Drag">
-                                    @for($i = 0; $i < 4; $i++)
+                                    @for ($i = 0; $i < 4; $i++)
                                         <!-- Testimonial Slide Start -->
                                         <div class="swiper-slide">
                                             <div class="testimonial-item">
                                                 <div class="testimonial-quote">
-                                                    <img src="{{ asset('images/testimonial-quote.svg') }}" alt="">
+                                                    <img src="{{ asset('images/testimonial-quote.svg') }}"
+                                                        alt="">
                                                 </div>
                                                 <div class="testimonial-content">
                                                     <p>{{ __('menu.testimonials.quote') }}</p>
@@ -377,7 +395,7 @@
                             <div class="faq-cta-box wow fadeInUp">
                                 <!-- Review Images Start -->
                                 <div class="review-images">
-                                    @for($i = 1; $i <= 4; $i++)
+                                    @for ($i = 1; $i <= 4; $i++)
                                         <div class="review-image">
                                             <figure class="image-anime">
                                                 <img src="{{ asset('images/author-' . $i . '.jpg') }}" alt="">
@@ -420,16 +438,22 @@
                             @php
                                 $questions = __('menu.faqs.questions');
                             @endphp
-                            @if(is_array($questions))
-                                @foreach($questions as $index => $faq)
+                            @if (is_array($questions))
+                                @foreach ($questions as $index => $faq)
                                     <!-- FAQ Item Start -->
                                     <div class="accordion-item wow fadeInUp" data-wow-delay="{{ $index * 0.2 }}s">
                                         <h2 class="accordion-header" id="heading{{ $index + 1 }}">
-                                            <button class="accordion-button {{ $index == 0 ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index + 1 }}" aria-expanded="{{ $index == 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $index + 1 }}">
+                                            <button class="accordion-button {{ $index == 0 ? '' : 'collapsed' }}"
+                                                type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapse{{ $index + 1 }}"
+                                                aria-expanded="{{ $index == 0 ? 'true' : 'false' }}"
+                                                aria-controls="collapse{{ $index + 1 }}">
                                                 {{ $faq['question'] }}
                                             </button>
                                         </h2>
-                                        <div id="collapse{{ $index + 1 }}" class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}" aria-labelledby="heading{{ $index + 1 }}" data-bs-parent="#accordion">
+                                        <div id="collapse{{ $index + 1 }}"
+                                            class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}"
+                                            aria-labelledby="heading{{ $index + 1 }}" data-bs-parent="#accordion">
                                             <div class="accordion-body">
                                                 <p>{{ $faq['answer'] }}</p>
                                             </div>
@@ -450,7 +474,7 @@
 @endsection
 
 @push('scripts')
-<script>
-    // Menu page specific JavaScript if needed
-</script>
+    <script>
+        // Menu page specific JavaScript if needed
+    </script>
 @endpush
