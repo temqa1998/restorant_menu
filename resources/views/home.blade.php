@@ -12,10 +12,10 @@
                     <h1 class="display-5 fw-bold mb-3">{{ config('restaurant.name') }}</h1>
                     <p class="lead text-muted mb-4">{{ config('restaurant.footer_description') }}</p>
                     <div class="d-flex gap-3">
-                        <a href="{{ route('categories.index') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.categories.index') }}" class="btn btn-primary">
                             <i class="bi bi-tag me-2"></i>Categories
                         </a>
-                        <a href="{{ route('menu.index') }}" class="btn btn-outline-primary">
+                        <a href="{{ route('admin.menu.index') }}" class="btn btn-outline-primary">
                             <i class="bi bi-journal-text me-2"></i>Menu
                         </a>
                     </div>

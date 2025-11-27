@@ -8,7 +8,7 @@
         <div>
             <p class="text-muted mb-0">Total: {{ $menus->total() }} items</p>
         </div>
-        <a href="{{ route('menu.create') }}" class="btn btn-primary">
+        <a href="{{ route('admin.menu.create') }}" class="btn btn-primary">
             <i class="bi bi-plus-lg me-1"></i> New Menu Item
         </a>
     </div>
@@ -119,7 +119,7 @@
                         <td colspan="10" class="text-center py-5">
                             <i class="bi bi-inbox fs-1 text-muted d-block mb-3"></i>
                             <p class="text-muted mb-3">No menu items found</p>
-                            <a href="{{ route('menu.create') }}" class="btn btn-primary">
+                            <a href="{{ route('admin.menu.create') }}" class="btn btn-primary">
                                 <i class="bi bi-plus-lg me-1"></i> Add First Item
                             </a>
                         </td>

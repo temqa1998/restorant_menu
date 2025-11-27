@@ -55,12 +55,19 @@ Route::post('/contact', function () {
 Auth::routes();
 
 // Admin Routes (Protected)
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    // Home route (redirects to admin dashboard)
+    Route::get('/home', function () {
+        return redirect()->route('admin.home');
+    })->name('home');
 
-    // Category Routes
-    Route::resource('categories', CategoryController::class);
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
-    // Menu Routes (Admin)
-    Route::resource('menu', MenuController::class);
+        // Category Routes
+        Route::resource('categories', CategoryController::class);
+
+        // Menu Routes (Admin)
+        Route::resource('menu', MenuController::class);
+    });
 });
